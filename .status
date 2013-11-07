@@ -85,8 +85,8 @@ _uptime() {
 }
 
 _mail() {
-    user="dreanazous"
-    pass="mafagafo42"
+    user="userhere"
+    pass="passwordhere"
     mail_count=`curl -s https://$user:$pass@mail.google.com/mail/feed/atom | sed -n '/^<fullcount>\([0-9]*\)<\/fullcount>$/s//\1/p'`
     email="\x02  \x01 $mail_count Unread "
 

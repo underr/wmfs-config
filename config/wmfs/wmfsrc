@@ -92,69 +92,7 @@
 
       screen = 0
 
-      free = true
-      tab = false
-      ignore_tag = false
       [/rule]
-      [rule]
-      instance = "nitrogen"
-
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]
-      [rule]
-      instance = "lxappearance"
-
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]
-      [rule]
-      instance = "fontforge"
-      free = true
-      [/rule]
-      [rule]
-      instance = "xfce4-appfinder"
-      free = true
-      ignore_tag = false
-      [/rule]
-      [rule]
-      instance = "xarchiver"
-
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]
-      [rule]
-      instance = "skype"
-
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]            
-      [rule]
-      instance = "viewnior"
-
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]      
-      [rule]
-      instance = "xev"
-
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]      
-      [rule]
-      instance = "ranger"
-
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]      
-
     [/rules]
      
     [launchers]
@@ -187,31 +125,7 @@
     [/launchers]
      
     [keys]
-    [key] mod = {"Super"} key = "u" func = "spawn" cmd = "termite -e ranger" [/key]
-    [key] mod = {"Super"} key = "w" func = "spawn" cmd = "firefox" [/key]
-    [key] mod = {"Super"} key = "e" func = "spawn" cmd = "subl" [/key]
-    [key] mod = {"Super", "Shift"} key = "t" func = "spawn" cmd = "thunar" [/key]
-    [key] mod = {"Super", "Shift"} key = "f" func = "spawn" cmd = "dolphin" [/key]
-    [key] mod = {"Super"} key = "n" func = "spawn" cmd = "termite -e ncmpcpp" [/key] 
-    [key] mod = {"Alt"} key = "p" func = "spawn" cmd = "mpc toggle" [/key]
-    [key] mod = {"Super"} key = "c" func = "spawn" cmd = "gcolor2" [/key]
-    [key] mod = {"Super"} key = "s" func = "spawn" cmd = "scrot 'scrot from %m-%d-%Y ~ $wx$h.png'" [/key]
-    [key] mod = {"Super"} key = "b" func = "spawn" cmd = "i3lock -c 000000" [/key]
-    [key] mod = {"Super"} key = "r" func = "spawn" cmd = "gmrun" [/key]
-    [key] mod = {"Super"} key = "m" func = "spawn" cmd = "xfce4-appfinder" [/key]
-    [key] mod = {"Super"} key = "v" func = "spawn" cmd = "termite -e alsamixer" [/key]
-    [key] mod = {"Super"} key = "Left" func = "spawn" cmd = "amixer set Master 5%- unmute" [/key]
-    [key] mod = {"Super"} key = "Right" func = "spawn" cmd = "amixer set Master 5%+ unmute" [/key]
-    [key] mod = {"Super"} key = "Down" func = "spawn" cmd = "amixer set Master 50%- unmute" [/key]
-    [key] mod = {"Super"} key = "Up" func = "spawn" cmd = "amixer set Master 50%+ unmute" [/key]
-    [key] mod = {"Alt"} key = "k" func = "spawn" cmd = "mpc next" [/key]
-    [key] mod = {"Alt"} key = "j" func = "spawn" cmd = "mpc prev" [/key]
-    [key] mod = {"Super"} key = "d" func = "spawn" cmd = "dmenu_path | dmenu_run -b -p 'run' -fn  '-*-cure-*-*-*-*-11-*-*-*-*-*-*-*' -nf '#6F6F6F' -nb '#D5D5D5' -sf '#DCDCDC' -sb '#383838'" [/key]
-    [key] mod = {"Alt"} key = "m" func = "launcher" cmd = "l-man" [/key]
-    [key] mod = {"Alt"} key = "r" func = "launcher" cmd = "rn" [/key]
-    [key] mod = {"Super", "Shift"} key = "n" func = "spawn" cmd = "nitrogen" [/key]    
      [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "termite" [/key]
-     [key] mod = {"Super", "Shift"} key = "h" func = "spawn" cmd = "termite -e htop" [/key]
      [key] mod = {"Alt"} key = "Tab" func = "client_focus_next" [/key]
       
       [key] mod = {"Super", "Shift"} key = "q" func = "quit" [/key]
