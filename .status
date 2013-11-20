@@ -2,7 +2,18 @@
 # wmfs status
 # inspired by addikt1ve, rhaamo, linkdd and some others
 # now with a bunch of useless stuff! 
-# yeah, 158 lines for a fucking status script. talk about some bloat.
+
+#colors
+c_music="#F87E7B"
+c_vol="#6CA8A9"
+c_mem="#DCD1B4"
+c_swap="#faa125"
+c_hdd="#6AA56B"
+c_wifi="#b4c862"
+c_up="#c090e4"
+c_mail="#FAB87F"
+c_date="#5E9FA3"
+c_icon="#212121"
 
 _music() {
 	play=`mpc | grep playing`
@@ -13,9 +24,7 @@ _music() {
 
 	[ -n "$play" ] && playing=" $song by $artist" || playing=""
 	
-	color="#F87E7B"
-
-	music="^s[right;$color; $playing]"
+	music="^s[right;$c_music;$playing]"
 }
 
 _volume() {
@@ -27,18 +36,14 @@ _volume() {
 		vol="mute"
 	fi
 
-	color="#6CA8A9"
-
-	volume="^s[right;$color; $vol]"
+	volume="^s[right;$c_vol; $vol]"
 }
 
 _memory() {
 	total=`free -m | grep "buffers/" | awk {'print $3MB'}`
 	mem=$(($total))
 	
-	color="#DCD1B4"
-
-	memory="^s[right;$color; $mem/3757]"
+	memory="^s[right;$c_mem; $mem/3757]"
 }
 
 _swap() {
@@ -46,18 +51,14 @@ _swap() {
 	used=`free -m -t | tail -n1 | awk '{print $3}'`
 	mem=$((100*$used/$total))
 
-	color="#faa125"
-
-	swap="^s[right;$color;swap $mem%]"
+	swap="^s[right;$c_swap;swap $mem%]"
 }
 
 _hdd() {
 	total=`df -h --total | tail -n1 | awk '{print $2}'`
 	used=`df -h --total | tail -n1 | awk '{print $3}'`
 
-	color="#6AA56B"
-
-	hdd="^s[right;$color; $used/$total]"
+	hdd="^s[right;$c_hdd; $used/$total]"
 }
 
 _wifi() {
@@ -71,36 +72,28 @@ _wifi() {
 		wifi="$essid $quality%"
 	fi
 
-	color="#b4c862"
-
-	wifi="^s[right;$color;$wifi]"
+	wifi="^s[right;$c_wifi;$wifi]"
 }
 
 _uptime() {
 	up=`uptime | awk '{print $1}' | cut -d, -f3`
 
-	color="#c090e4"
-
-	uptime="^s[right;$color; $up]"
+	uptime="^s[right;$c_up; $up]"
 }
 
 _mail() {
-    user="userhere"
-    pass="passwordhere"
+    user="mailhere"
+    pass="passhere"
     mail_count=`curl -s https://$user:$pass@mail.google.com/mail/feed/atom | sed -n '/^<fullcount>\([0-9]*\)<\/fullcount>$/s//\1/p'`
     email="\x02  \x01 $mail_count Unread "
 
-    color="#FAB87F"
-
-    mail="^s[right;$color;  $mail_count]"
+    mail="^s[right;$c_mail;  $mail_count]"
 }
 
 _date() {
 	hour=(`date +%H:%M`)
 
-	color="#5E9FA3"
-
-	date="^s[right;$color; $hour   ]"
+	date="^s[right;$c_date; $hour   ]"
 }
 
 _button() {
