@@ -1,0 +1,138 @@
+#!/bin/sh
+# wmfs status
+# inspired by addikt1ve, rhaamo, linkdd and some others
+# now with a bunch of useless stuff! 
+
+#colors
+c_music="#CC2A41"
+c_mail="#424254"
+c_mem="#CC2A41"
+c_date="#0B2E59"
+
+c_vol="#6CA8A9"
+c_swap="#faa125"
+c_hdd="#6AA56B"
+c_wifi="#b4c862"
+c_up="#c090e4"
+c_icon="#212121"
+c_cpu="#000000"
+_music() {
+	play=`mpc | grep playing`
+	pause=`mpc | grep pause`
+
+	artist=`mpc -f %artist% | head -n1 | cut -c1-60`
+	song=`mpc -f %title% | head -n1 | cut -c1-60`
+
+	[ -n "$play" ] && playing=" $song by $artist" || playing=""
+	
+	music="^s[right;$c_music;$playing]"
+}
+
+_volume() {
+
+	status=`amixer -c 0 sget 'Master' | tail -n1 | awk '{ print $6 }' | sed -re 's/^\[*//' | cut -d\] -f1`
+		if [ $status == on ]; then
+			vol=`amixer -c 0 sget 'Master' | tail -n1 | awk '{ print $4 }' | sed -re 's/^\[*//' | cut -d\] -f1`
+	else
+		vol="mute"
+	fi
+
+	volume="^s[right;$c_vol; $vol]"
+}
+
+_memory() {
+	total=`free -m | grep "buffers/" | awk {'print $3MB'}`
+	mem=$(($total))
+	
+	memory="^s[right;$c_mem; $mem/3757]"
+}
+
+_cpu() {
+	read cpu a b c previdle rest < /proc/stat
+	revtotal=$((a+b+c+previdle))
+	leep 0.5
+	read cpu a b c idle rest < /proc/stat
+
+	total=$((a+b+c+idle))
+	cpuu="$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal)))%" 
+
+	cpu="^s[right;$c_cpu; $cpuu]"
+}
+_swap() {
+	total=`free -m -t | tail -n1 | awk '{print $2}'`
+	used=`free -m -t | tail -n1 | awk '{print $3}'`
+	mem=$((100*$used/$total))
+
+	swap="^s[right;$c_swap;swap $mem%]"
+}
+
+_hdd() {
+	total=`df -h --total | tail -n1 | awk '{print $2}'`
+	used=`df -h --total | tail -n1 | awk '{print $3}'`
+
+	hdd="^s[right;$c_hdd; $used/$total]"
+}
+
+_wifi() {
+	wlan=`awk '/wlan/' /proc/net/wireless`
+	quality=`awk '/wlan0/ { print $3 }' /proc/net/wireless|sed -e 's/\.$//'`
+	essid=`iwconfig wlan0 | awk '/ESSID/ { print $4 }'|sed -e 's/ESSID:"//'|sed -e 's/"$//' | cut -c1-7`
+
+	if [ -z "$wlan" ]; then
+		wifi="off"
+	else
+		wifi="$essid $quality%"
+	fi
+
+	wifi="^s[right;$c_wifi;$wifi]"
+}
+
+_uptime() {
+	up=`uptime | awk '{print $1}' | cut -d, -f3`
+
+	uptime="^s[right;$c_up; $up]"
+}
+
+_mail() {
+    user="userhere"
+    pass="passhere"
+    mail_count=`curl -s https://$user:$pass@mail.google.com/mail/feed/atom | sed -n '/^<fullcount>\([0-9]*\)<\/fullcount>$/s//\1/p'`
+    email="\x02  \x01 $mail_count Unread "
+
+    mail="^s[right;$c_mail; $mail_count]"
+}
+
+_date() {
+	hour=(`date +%H:%M`)
+
+	date="^s[right;$c_date; $hour   ]"
+}
+
+_button() {
+	button="pause"
+	color="#8696e4"
+	button="^s[right;$color;$button]"
+}
+
+statustext() {
+	first=1
+	args=""
+	for arg in $@; do
+		if [ $first == 1 ]; then
+			separator=""
+			first=0
+		else	
+			separator="^s[right;#393939; | ]" #old: 
+		fi
+		_${arg}
+		args="${args} `eval echo '$separator$'$arg`"
+	done
+	wmfs -c status "default $args"
+}
+
+while true;
+do
+	statustext music mail memory date
+	sleep 1
+done
+ 

@@ -25,8 +25,9 @@
          position = 1
          screen = 0
          elements = "tls"   # element order in bar
-         theme = "dark"
+         theme = "light"
       [/bar]
+
 
     [/bars]
      
@@ -44,7 +45,6 @@
       [tag] name = "" screen = -1 [/tag]
       [tag] name = "" screen = -1 [/tag]
       [tag] name = "" screen = -1 [/tag]
-      #[tag] name = " " screen = -1 [/tag]
       [tag] name = "" screen = -1 [/tag]
      
      
@@ -64,7 +64,7 @@
       # Give focus to new created client (default = false)
       autofocus = true
      
-      theme = "default"
+      theme = "light"
       key_modifier = "Super"
      
       # Focus type:
@@ -92,7 +92,74 @@
 
       screen = 0
 
+      free = true
+      tab = false
+      ignore_tag = false
       [/rule]
+      [rule]
+      instance = "nitrogen"
+      free = true
+      tab = false
+      ignore_tag = false
+      [/rule]
+      [rule]
+      instance = "lxappearance"
+      free = true
+      tab = false
+      ignore_tag = false
+      [/rule]
+      [rule]
+      instance = "fontforge"
+      free = true
+      [/rule]
+      [rule]
+      instance = "xfce4-appfinder"
+      free = true
+      ignore_tag = false
+      [/rule]
+      [rule]
+      instance = "xarchiver"
+      free = true
+      tab = false
+      ignore_tag = false
+      [/rule]
+      [rule]
+      instance = "dolphin"
+      free = true
+      tab = false
+      ignore_tag = false
+      [/rule]      
+      [rule]
+      instance = "viewnior"
+      free = true
+      tab = false
+      ignore_tag = false
+      [/rule]               
+      [rule]
+      instance = "viewnior"
+      free = true
+      tab = false
+      ignore_tag = false
+      [/rule]      
+      [rule]
+      instance = "xev"
+      free = true
+      tab = false
+      ignore_tag = false
+      [/rule]      
+      [rule]
+      instance = "mpv"
+      free = true
+      tab = false
+      ignore_tag = false
+      [/rule]   
+      [rule]
+      instance = "xv"
+      free = true
+      tab = false
+      ignore_tag = false
+      [/rule] 
+
     [/rules]
      
     [launchers]
@@ -108,25 +175,10 @@
      
          width = 150
       [/launcher]
-     
-      [launcher]
-     name = "l-man"
-     prompt = "man:"
-     command = "spawn termite -e man"
-     width = 150
-  [/launcher]
-  [launcher]
-     name = "rn"
-     prompt = "ranger:"
-     command = "spawn termite -e rn"
-     width = 300
-  [/launcher]
 
     [/launchers]
      
-    [keys]
      [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "termite" [/key]
-     [key] mod = {"Alt"} key = "Tab" func = "client_focus_next" [/key]
       
       [key] mod = {"Super", "Shift"} key = "q" func = "quit" [/key]
       [key] mod = {"Super", "Shift"} key = "r" func = "reload" [/key]
