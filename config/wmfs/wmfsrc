@@ -86,99 +86,12 @@
       [rule]
       # use instance = "*" for a all-clients rule
       instance = "*"
-
       # role = "" name = "" theme = "default"
-
-
       free = false
       tab = false
       ignore_tag = false
       [/rule]
-		  [rule]
-      instance = "nitrogen"
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]
-      [rule]
-      instance = "lxappearance"
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]
-      [rule]
-      instance = "fontforge"
-      free = true
-      [/rule]
-      [rule]
-      instance = "xfce4-appfinder"
-      free = true
-      ignore_tag = false
-      [/rule]
-      [rule]
-      instance = "Firefox"
-      free = true
-      tab = false
-      ignore_tag = false
-		theme = "light"
-      [/rule]
-      [rule]
-      instance = "viewnior"
-      free = true
-      tab = false
-      ignore_tag = false
-      
-      [/rule]               
-      [rule]
-      instance = "viewnior"
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]      
-      [rule]
-      instance = "CaveStory+_64"
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]      
-      [rule]
-      instance = "mpv"
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]   
-      [rule]
-      instance = "xv"
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule] 
-      [rule]
-      instance = "Plasma"
-      free = true
-      tab = false
-      tag = 5
-      theme = border
-      [/rule]
-      [rule]
-      instance = "Plasma-desktop"
-      free = true
-      tab = false
-      tag = 5
-      theme = border
-      [/rule]     
-		[rule]	
-		instance = "sun-awt-X11-XFramePeer"
-		free = true 
-		[/rule]
-		[rule]	
-		role = float
-		free = true
-		[/rule]
-		[rule]
-		class = "Wine"
-		free = true
-		[/rule]
+ 
     [/rules]
      
     [launchers]
@@ -201,42 +114,9 @@
      command = "spawn termite -e man"
      width = 150
   [/launcher]
-  [launcher]
-     name = "rn"
-     prompt = "ranger:"
-     command = "spawn termite -e rn"
-     width = 300
-  [/launcher]
-
     [/launchers]
      
     [keys]
-    [key] mod = {"Super"} key = "u" func = "spawn" cmd = "termite -e ranger" [/key]
-    [key] mod = {"Super"} key = "w" func = "spawn" cmd = "firefox" [/key]
-    [key] mod = {"Super"} key = "e" func = "spawn" cmd = "subl" [/key]
-    #[key] mod = {"Super", "Shift"} key = "t" func = "spawn" cmd = "thunar" [/key]
-    #[key] mod = {"Super", "Shift"} key = "f" func = "spawn" cmd = "dolphin" [/key]
-    [key] mod = {"Super"} key = "n" func = "spawn" cmd = "termite -e ncmpcpp" [/key] 
-    [key] mod = {"Alt"} key = "p" func = "spawn" cmd = "mpc toggle" [/key]
-    [key] mod = {"Super"} key = "c" func = "spawn" cmd = "gcolor2" [/key]
-    [key] mod = {"Super"} key = "s" func = "spawn" cmd = "scrot 'scrot from %m-%d-%Y ~ $wx$h.png'" [/key]
-    [key] mod = {"Super"} key = "b" func = "spawn" cmd = "i3lock -c 000000" [/key]
-    [key] mod = {"Super"} key = "r" func = "spawn" cmd = "gmrun" [/key]
-    [key] mod = {"Super"} key = "m" func = "spawn" cmd = "xfce4-appfinder" [/key]
-#    [key] mod = {"Control"} key = "Left" func = "spawn" cmd = "amixer set Master 5%- unmute" [/key]
-#    [key] mod = {"Control"} key = "Right" func = "spawn" cmd = "amixer set Master 5%+ unmute" [/key]
-    [key] mod = {"Control"} key = "Up" func = "spawn" cmd = "mpc prev" [/key]
-    [key] mod = {"Control"} key = "Down" func = "spawn" cmd = "mpc next" [/key]
-    [key] mod = {"Super"} key = "d" func = "spawn" cmd = "dmenu_path | dmenu_run  -p 'run' -fn  '-*-cure-*-*-*-*-11-*-*-*-*-*-*-*' -nf '#212121' -nb '#FFFFFF' -sf '#DCDCDC' -sb '#383838'" [/key]
-    [key] mod = {"Alt"} key = "m" func = "launcher" cmd = "l-man" [/key]
-    [key] mod = {"Alt"} key = "r" func = "launcher" cmd = "rn" [/key]
-    [key] mod = {"Super", "Shift"} key = "n" func = "spawn" cmd = "nitrogen" [/key]    
-     [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "termite" [/key]
-     #[key] mod = {"Alt", "Shift"} key = "h" func = "spawn" cmd = "termite -e htop" [/key]
-     [key] mod = {"Alt"} key = "Tab" func = "client_focus_next" [/key]
-    [key] mod = {"Super", "Shift"} key = "l" func = "spawn" cmd = "lxappearance" [/key]
-
-      
       [key] mod = {"Super", "Shift"} key = "q" func = "quit" [/key]
       [key] mod = {"Super", "Shift"} key = "r" func = "reload" [/key]
 	    
