@@ -13,17 +13,15 @@
          # Element tags
          tags_normal_fg = "#5D5D5D"
          tags_normal_bg = "#090915"
-         # tags_normal_statusline = ""
      
-         tags_sel_fg = "#B05574"
-         tags_sel_bg = "#16162D"
-         tags_sel_statusline = "\R[0;0;100;1;#B05574]"
-         # tags_sel_statusline = ""
-     
+         tags_sel_fg = "#ECE1C3"
+         tags_sel_bg = "#2E2E3B"
+         tags_sel_statusline = "\R[0;0;1000;1;#C56A77]"
+ 
          tags_occupied_fg = "#B9B9B9"
-         tags_occupied_bg = "#090915"
-         #tags_occupied_statusline = "\R[0;0;100;1;#ADADAD]"         
-     
+         tags_occupied_bg = "#1A1A28"
+         tags_occupied_statusline = "\R[0;0;100;1;#8EBDB6]"
+ 
          tags_urgent_fg = "#ffffff"
          tags_urgent_bg = "#519f50"
          # tags_urgent_statusline = ""
@@ -33,10 +31,10 @@
      
          # Frame / Client
          client_normal_fg = "#141415"
-         client_normal_bg = "#fff"
+         client_normal_bg = "#4C4C4C"
      
          client_sel_fg = "#BBBBBB" 
-         client_sel_bg = "#fff" ##4C4C4C
+         client_sel_bg = "#808080"
      
          # client_free_statusline = ""
          #
@@ -44,7 +42,7 @@
      
          frame_bg = "#555555"
          client_titlebar_width = 0
-         client_border_width = 3
+         client_border_width = 2
               
        [/theme]
   
@@ -57,21 +55,21 @@
          # Bars
          bars_width = 17
          bars_fg = "#171717"
-         bars_bg = "#fff"
+         bars_bg = "#FFFFFF"
      
          # Element tags
-         tags_normal_fg = "#6F6F6F"
-         tags_normal_bg = "#fff"
+         tags_normal_fg = "#969696"
+         tags_normal_bg = "#FFFFFF"
          #tags_normal_statusline = "\R[0;9;100;1;#D5D5D5]"         
          # tags_normal_statusline = ""
      
          tags_sel_fg = "#E42323"
          tags_sel_bg = "#DCDCDC"
-         tags_sel_statusline = "\R[0;0;100;1;#E42323]"
+         tags_sel_statusline = "\R[1;16tt;100;1;#E42323]"
          # tags_sel_statusline = ""
      
          tags_occupied_fg = "#131313"
-         tags_occupied_bg = "#fff"
+         tags_occupied_bg = "#FFFFFF"
          #tags_occupied_statusline = "\R[0;;100;1;#353535]"         
      
          tags_urgent_fg = "#ffffff"
@@ -86,7 +84,7 @@
          client_normal_bg = "#fff"
      
          client_sel_fg = "#BBBBBB"
-         client_sel_bg = "#D0D0D0\"
+         client_sel_bg = "#fff"
      
          # client_free_statusline = ""
          #
@@ -97,5 +95,147 @@
          client_border_width = 3
      
        [/theme]
+
+      [theme]
+         # No name mean default
+         name = light2
      
+         font = "cure"
+     
+         # Bars
+         bars_width = 17
+         bars_fg = "#171717"
+         bars_bg = "#FFFFFF"
+     
+         # Element tags
+         tags_normal_fg = "#BDBDBD"
+         tags_normal_bg = "#FFFFFF"
+         tags_normal_statusline = "\R[0;15;100;2;#B8BCD4]"         
+         # tags_normal_statusline = ""
+     
+         tags_sel_fg = "#515151"
+         tags_sel_bg = "#E6CBD5"
+         tags_sel_statusline = "\R[0;15;100;2;#BF416F]"
+         # tags_sel_statusline = ""
+     
+         tags_occupied_fg = "#64687B"
+         tags_occupied_bg = "#FFFFFF"
+         tags_occupied_statusline = "\R[0;15;100;2;#64687B]"
+     
+         tags_urgent_fg = "#ffffff"
+         tags_urgent_bg = "#D5D5D5"
+         # tags_urgent_statusline = ""
+     
+         tags_border_color = "#112211"
+         tags_border_width = 0
+     
+         # Frame / Client
+         client_normal_fg = "#141415"
+         client_normal_bg = "#DAD7E4"
+     
+         client_sel_fg = "#141415"
+         client_sel_bg = "#FFFFFF"
+     
+         # client_free_statusline = ""
+         #
+         frame_bg = "#555555"
+     
+         frame_bg = "#fff"
+         client_titlebar_width = 0
+         client_border_width = 3
+     
+       [/theme]       
+     
+      [theme]
+         # No name mean default
+         name = rice
+         font = "cure"
+     
+         # Bars
+         bars_width = 17
+         bars_fg = "#FFFFFF"
+         bars_bg = "#1F1F1F"
+     
+         # Element tags
+         tags_normal_fg = "#777777"
+         tags_normal_bg = "#1F1F1F"
+         # tags_normal_statusline = "\R[0;15;100;2;#D4D4D4]"         
+     
+         tags_sel_fg = "#fff"
+         tags_sel_bg = "#363642"
+         tags_sel_statusline = "\R[0;0;1000;2;#C56A77]"
+     
+         tags_occupied_fg = "#CACACA"
+         tags_occupied_bg = "#23232D"
+         tags_occupied_statusline = "\R[0;0;100;2;#8EBDB6]"  
+     
+         tags_urgent_fg = "#ffffff"
+         tags_urgent_bg = "#0D092F"
+     
+         tags_border_color = "#fff"
+         tags_border_width = 0
+     
+         # Frame / Client
+         client_normal_fg = "#141415"
+         client_normal_bg = "#CCCCCC"
+     
+         client_sel_fg = "#BBBBBB"
+         client_sel_bg = "#ffffff"
+     
+         # client_free_statusline = ""
+         #
+         frame_bg = "#555555"
+     
+         frame_bg = "#fff"
+         client_titlebar_width = 0
+         client_border_width = 2
+     
+       [/theme]
+
+      [theme]
+         # No name mean default
+         name = darker
+         font = "cure"
+     
+         # Bars
+         bars_width = 17
+         bars_fg = "#FFFFFF"
+         bars_bg = "#1F1F1F"
+     
+         # Element tags
+         tags_normal_fg = "#777777"
+         tags_normal_bg = "#151515"
+         # tags_normal_statusline = "\R[0;15;100;2;#D4D4D4]"         
+     
+         tags_sel_fg = "#fff"
+         tags_sel_bg = "#363642"
+         tags_sel_statusline = "\R[0;0;1000;2;#C56A77]"
+     
+         tags_occupied_fg = "#CACACA"
+         tags_occupied_bg = "#23232D"
+         tags_occupied_statusline = "\R[0;0;100;2;#8EBDB6]"  
+     
+         tags_urgent_fg = "#ffffff"
+         tags_urgent_bg = "#0D092F"
+     
+         tags_border_color = "#fff"
+         tags_border_width = 0
+     
+         # Frame / Client
+         client_normal_fg = "#141415"
+         client_normal_bg = "#CCCCCC"
+     
+         client_sel_fg = "#BBBBBB"
+         client_sel_bg = "#ffffff"
+     
+         # client_free_statusline = ""
+         #
+         frame_bg = "#555555"
+     
+         frame_bg = "#fff"
+         client_titlebar_width = 0
+         client_border_width = 3
+     
+       [/theme]
+
     [/themes]

@@ -24,10 +24,9 @@
       [bar]
          position = 1
          screen = 0
-         elements = "tls"   # element order in bar
-         theme = "light"
+         elements = "tls"   # element order in bar (tsl)
+         theme = "rice"
       [/bar]
-
 
     [/bars]
      
@@ -58,13 +57,13 @@
      
     [client]
      
-      # Padding between clients (default: 0) :
-      padding = 60
+      # Padding between clients (default: [6]0) :
+      padding = 30
      
       # Give focus to new created client (default = false)
       autofocus = true
      
-      theme = "light"
+      theme = "rice"
       key_modifier = "Super"
      
       # Focus type:
@@ -86,17 +85,16 @@
      
       [rule]
       # use instance = "*" for a all-clients rule
-      instance = "mpv[]"
+      instance = "*"
 
       # role = "" name = "" theme = "default"
 
-      screen = 0
 
-      free = true
+      free = false
       tab = false
       ignore_tag = false
       [/rule]
-      [rule]
+		  [rule]
       instance = "nitrogen"
       free = true
       tab = false
@@ -118,22 +116,18 @@
       ignore_tag = false
       [/rule]
       [rule]
-      instance = "xarchiver"
+      instance = "Firefox"
       free = true
       tab = false
       ignore_tag = false
+		theme = "light"
       [/rule]
-      [rule]
-      instance = "dolphin"
-      free = true
-      tab = false
-      ignore_tag = false
-      [/rule]      
       [rule]
       instance = "viewnior"
       free = true
       tab = false
       ignore_tag = false
+      
       [/rule]               
       [rule]
       instance = "viewnior"
@@ -142,7 +136,7 @@
       ignore_tag = false
       [/rule]      
       [rule]
-      instance = "xev"
+      instance = "CaveStory+_64"
       free = true
       tab = false
       ignore_tag = false
@@ -159,7 +153,32 @@
       tab = false
       ignore_tag = false
       [/rule] 
-
+      [rule]
+      instance = "Plasma"
+      free = true
+      tab = false
+      tag = 5
+      theme = border
+      [/rule]
+      [rule]
+      instance = "Plasma-desktop"
+      free = true
+      tab = false
+      tag = 5
+      theme = border
+      [/rule]     
+		[rule]	
+		instance = "sun-awt-X11-XFramePeer"
+		free = true 
+		[/rule]
+		[rule]	
+		role = float
+		free = true
+		[/rule]
+		[rule]
+		class = "Wine"
+		free = true
+		[/rule]
     [/rules]
      
     [launchers]
@@ -175,14 +194,57 @@
      
          width = 150
       [/launcher]
+     
+      [launcher]
+     name = "l-man"
+     prompt = "man:"
+     command = "spawn termite -e man"
+     width = 150
+  [/launcher]
+  [launcher]
+     name = "rn"
+     prompt = "ranger:"
+     command = "spawn termite -e rn"
+     width = 300
+  [/launcher]
 
     [/launchers]
      
+    [keys]
+    [key] mod = {"Super"} key = "u" func = "spawn" cmd = "termite -e ranger" [/key]
+    [key] mod = {"Super"} key = "w" func = "spawn" cmd = "firefox" [/key]
+    [key] mod = {"Super"} key = "e" func = "spawn" cmd = "subl" [/key]
+    #[key] mod = {"Super", "Shift"} key = "t" func = "spawn" cmd = "thunar" [/key]
+    #[key] mod = {"Super", "Shift"} key = "f" func = "spawn" cmd = "dolphin" [/key]
+    [key] mod = {"Super"} key = "n" func = "spawn" cmd = "termite -e ncmpcpp" [/key] 
+    [key] mod = {"Alt"} key = "p" func = "spawn" cmd = "mpc toggle" [/key]
+    [key] mod = {"Super"} key = "c" func = "spawn" cmd = "gcolor2" [/key]
+    [key] mod = {"Super"} key = "s" func = "spawn" cmd = "scrot 'scrot from %m-%d-%Y ~ $wx$h.png'" [/key]
+    [key] mod = {"Super"} key = "b" func = "spawn" cmd = "i3lock -c 000000" [/key]
+    [key] mod = {"Super"} key = "r" func = "spawn" cmd = "gmrun" [/key]
+    [key] mod = {"Super"} key = "m" func = "spawn" cmd = "xfce4-appfinder" [/key]
+#    [key] mod = {"Control"} key = "Left" func = "spawn" cmd = "amixer set Master 5%- unmute" [/key]
+#    [key] mod = {"Control"} key = "Right" func = "spawn" cmd = "amixer set Master 5%+ unmute" [/key]
+    [key] mod = {"Control"} key = "Up" func = "spawn" cmd = "mpc prev" [/key]
+    [key] mod = {"Control"} key = "Down" func = "spawn" cmd = "mpc next" [/key]
+    [key] mod = {"Super"} key = "d" func = "spawn" cmd = "dmenu_path | dmenu_run  -p 'run' -fn  '-*-cure-*-*-*-*-11-*-*-*-*-*-*-*' -nf '#212121' -nb '#FFFFFF' -sf '#DCDCDC' -sb '#383838'" [/key]
+    [key] mod = {"Alt"} key = "m" func = "launcher" cmd = "l-man" [/key]
+    [key] mod = {"Alt"} key = "r" func = "launcher" cmd = "rn" [/key]
+    [key] mod = {"Super", "Shift"} key = "n" func = "spawn" cmd = "nitrogen" [/key]    
      [key] mod = {"Super"} key = "Return" func = "spawn" cmd = "termite" [/key]
+     #[key] mod = {"Alt", "Shift"} key = "h" func = "spawn" cmd = "termite -e htop" [/key]
+     [key] mod = {"Alt"} key = "Tab" func = "client_focus_next" [/key]
+    [key] mod = {"Super", "Shift"} key = "l" func = "spawn" cmd = "lxappearance" [/key]
+
       
       [key] mod = {"Super", "Shift"} key = "q" func = "quit" [/key]
       [key] mod = {"Super", "Shift"} key = "r" func = "reload" [/key]
-     
+	    
+	[key] mod = {"Super"} key = "k" func = "client_focus_top" [/key]
+	[key] mod = {"Super"} key = "j" func = "client_focus_bottom" [/key]
+	[key] mod = {"Super"} key = "l" func = "client_focus_right" [/key]
+	[key] mod = {"Super"} key = "h" func = "client_focus_left" [/key]
+ 
       # Tag manipulation
       [key] mod = {"Super"} key = "1" func = "tag_set" cmd = "0" [/key]
       [key] mod = {"Super"} key = "2" func = "tag_set" cmd = "1" [/key]
@@ -205,14 +267,14 @@
       [key] mod = {"Super", "Shift"} key = "Right" func = "tag_move_client_next" [/key]
       [key] mod = {"Super", "Shift"} key = "Left" func = "tag_move_client_prev" [/key]  
      
-      [key] mod = {"Super"} key = "minus" func = "tag_del" [/key]
-      [key] mod = {"Super", "Shift"} key = "minus" func = "tag_new" [/key]
+      #[key] mod = {"Super"} key = "minus" func = "tag_del" [/key]
+      #[key] mod = {"Super", "Shift"} key = "minus" func = "tag_new" [/key]
      
       # tag function: cmd = nameofthetag
       #[key] mod = {"Super"} key = "z" func = "tag" cmd = "2" [/key]
      
-      [key] mod = {"Control"} key = "Right" func = "tag_next" [/key]
-      [key] mod = {"Control"} key = "Left"  func = "tag_prev" [/key]
+      [key] mod = {"Super"} key = "Right" func = "tag_next" [/key]
+      [key] mod = {"Super"} key = "Left"  func = "tag_prev" [/key]
      
       [key] mod = {"Control"} key = "Up"  func = "screen_next" [/key]
       [key] mod = {"Control"} key = "Down" func = "screen_prev" [/key]
@@ -227,30 +289,30 @@
       [key] mod = {"Alt"} key = "j" func = "client_focus_bottom" [/key]
      
       # swap next client with direction:
-      [key] mod = {"Control", "Shift"} key = "h" func = "client_swap_left"   [/key]
-      [key] mod = {"Control", "Shift"} key = "l" func = "client_swap_right"  [/key]
-      [key] mod = {"Control", "Shift"} key = "k" func = "client_swap_top"    [/key]
-      [key] mod = {"Control", "Shift"} key = "j" func = "client_swap_bottom" [/key]
+      #[key] mod = {"Control", "Shift"} key = "h" func = "client_swap_left"   [/key]
+      #[key] mod = {"Control", "Shift"} key = "l" func = "client_swap_right"  [/key]
+      #[key] mod = {"Control", "Shift"} key = "k" func = "client_swap_top"    [/key]
+      #[key] mod = {"Control", "Shift"} key = "j" func = "client_swap_bottom" [/key]
      
       # Resize selected tiled client with direction
-      [key] mod = {"Super"} key = "h" func = "client_resize_left"   cmd = "20" [/key]
-      [key] mod = {"Super"} key = "l" func = "client_resize_left"   cmd = "-20" [/key]
-      [key] mod = {"Super"} key = "k" func = "client_resize_top"    cmd = "20" [/key]
-      [key] mod = {"Super"} key = "j" func = "client_resize_top"    cmd = "-20" [/key]
-      [key] mod = {"Super", "Control"} key = "h" func = "client_resize_right"  cmd = "-20" [/key]
+      #[key] mod = {"Super"} key = "h" func = "client_resize_left"   cmd = "20" [/key]
+      #[key] mod = {"Super"} key = "l" func = "client_resize_left"   cmd = "-20" [/key]
+      #[key] mod = {"Super"} key = "k" func = "hclient_resize_top"    cmd = "20" [/key]
+      #[key] mod = {"Super"} key = "j" func = "client_resize_top"    cmd = "-20" [/key]
+      [key] mod = {"Super", "Control"} key = "h" func = "client_resize_left"  cmd = "-20" [/key]
       [key] mod = {"Super", "Control"} key = "l" func = "client_resize_right"  cmd = "20" [/key]
-      [key] mod = {"Super", "Control"} key = "k" func = "client_resize_bottom" cmd = "-20" [/key]
-      [key] mod = {"Super", "Control"} key = "j" func = "client_resize_bottom" cmd = "20" [/key]
+      [key] mod = {"Super", "Control"} key = "k" func = "client_resize_top" cmd = "-20" [/key]
+     [key] mod = {"Super", "Control"} key = "j" func = "client_resize_bottom" cmd = "20" [/key]
      
       # Tabbing command
-      [key] mod = {"Alt", "Shift"} key = "h" func = "client_tab_left"   [/key]
-      [key] mod = {"Alt", "Shift"} key = "l" func = "client_tab_right"  [/key]
-      [key] mod = {"Alt", "Shift"} key = "k" func = "client_tab_top"    [/key]
-      [key] mod = {"Alt", "Shift"} key = "j" func = "client_tab_bottom" [/key]
-      [key] mod = {"Alt", "Shift"} key = "u" func = "client_untab" [/key]
-      [key] mod = {"Super"}        key = "t" func = "client_tab_next_opened" [/key]
+      #[key] mod = {"Alt", "Shift"} key = "h" func = "client_tab_left"   [/key]
+      #[key] mod = {"Alt", "Shift"} key = "l" func = "client_tab_right"  [/key]
+      #[key] mod = {"Alt", "Shift"} key = "k" func = "client_tab_top"    [/key]
+      #[key] mod = {"Alt", "Shift"} key = "j" func = "client_tab_bottom" [/key]
+      #[key] mod = {"Alt", "Shift"} key = "u" func = "client_untab" [/key]
+      #[key] mod = {"Super"}        key = "t" func = "client_tab_next_opened" [/key]
      
-      # Layout manipulation
+      #1 Layout manipulation
       [key] mod = {"Super"}          key = "m" func = "layout_vmirror" [/key]
       [key] mod = {"Super", "Shift"} key = "m" func = "layout_hmirror" [/key]
       [key] mod = {"Super"}          key = "z" func = "layout_rotate_right" [/key]
